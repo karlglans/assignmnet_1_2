@@ -1,0 +1,184 @@
+:root {
+  --orange: #ea700d;
+  --steelblue: #308693;
+  --blue: #7191c0;
+  --yellow: #fed966;
+  --grey: #dde2cc;
+  --olive: #c4d59f;
+  --mainborder: #9b8f4a;
+  --almost_black: #444;
+  --purple: #7030a0;
+}
+
+h1 {
+  font-size: 1.65em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.3em;
+}
+
+html {
+  background-color: #eee;
+}
+
+body {
+  max-width: 1024px;
+  display: grid;
+  grid-template-areas: 
+            "top top"
+            "m a"
+            "foot foot";
+  grid-template-columns: 1fr;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+body > header {
+  grid-area: top;
+  background-color: var(--orange);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--almost_black);
+}
+
+body > header > h1  {
+  flex: 1;
+  padding-left: 0.6em;
+}
+
+body > header > nav > ul {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-content:center;
+}
+
+body > header > nav > ul::after {
+  flex: 1;
+  min-width: 5em;
+  content: "\00a0"; /* trademark sign*/
+}
+
+body > header > nav a {
+  flex: 1;
+  width: 200px;
+  background-color: var(--steelblue);
+  display: inline-block;
+  text-align: center;
+  line-height: 4em;
+}
+
+body > header > nav a:hover {
+  cursor: pointer;
+}
+
+body > header > nav {
+  border-left: 2px solid var(--almost_black);
+}
+
+body > header > nav a {
+  border-right: 2px solid var(--almost_black);
+}
+
+body > header > a:hover {
+  cursor: pointer;
+}
+
+#loginpage header {
+  text-transform: uppercase;
+}
+
+body > header > a {
+  flex: 1;
+  background-color:var(--blue);
+  text-align: center;
+  line-height: 4em;
+  border-left: 2px solid var(--almost_black);
+}
+
+main {
+  grid-area: m;
+  display: grid;
+  grid-template-areas: 
+            "main1 main1"
+            "main2 main2"
+            "main3a main3b";
+  min-height: 500px;
+  grid-template-rows: 80px 150px 1fr;
+  background-color:var(--yellow);
+  padding: 2em;
+  grid-gap: 2em;
+  border: 2px solid var(--almost_black);
+  border-top: 0;
+  border-bottom: 0;
+}
+main > :nth-child(n) {
+  padding: 1em;
+  background-color: var(--grey);
+  border: 2px solid var(--mainborder);
+}
+
+main > :nth-child(1) {
+  grid-area: main1;
+  width: 220px;
+}
+
+main img {
+  float: right;
+}
+
+main h2 {
+  text-align: center;
+}
+
+main > :nth-child(2) {
+  grid-area: main2;
+}
+
+aside {
+  grid-area: a;
+  background-color: var(--olive);
+  padding: 2em;
+  border-right: 2px solid var(--almost_black);
+}
+
+aside ul > li {
+  margin-top: 1em;
+}
+
+footer {
+  grid-area: foot;
+  background-color: var(--purple);
+  padding: 1em 2em;
+  border: 2px solid var(--almost_black);
+}
+
+form {
+  border-radius: 20px;
+  text-align: center;
+  height: 5em;
+}
+
+form input {
+  padding: .75em;
+  background-color: white;
+  margin: auto;
+}
+
+form > :nth-child(1) {
+  margin-right: 2em;
+}
+form > :nth-child(2) {
+  margin-right: 2em;
+}
+
+form button {
+  padding: .75em;
+  background-color: var(--steelblue);
+  color: white;
+  border-radius: 3px;
+}
